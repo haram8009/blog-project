@@ -1,0 +1,11 @@
+상세페이지 id :
+{{article.id}}
+<br>
+<h1>{{article.title}}</h1>
+<p>{{article.author.username}}</p>
+<hr>
+<p>{{article.content}}</p>
+
+<a href={% url 'article:edit' article.id %}>수정하기</a>
+<a href={% url 'article:destroy' article.id %}>삭제하기</a>
+<a href={% url 'main:index' %}>홈으로</a>

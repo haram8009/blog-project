@@ -1,0 +1,7 @@
+수정
+
+<form method="POST" action={% url 'article:new' %}>
+  {% csrf_token %}
+  {{form}}
+    <button type='submit'>글 수정</button>
+  </form>
