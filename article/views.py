@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ArticleForm
 from .models import Article
+from user.models import Profile
 
 
 def new(request):
@@ -17,7 +18,8 @@ def new(request):
 
 def detail(request, id):
     article = get_object_or_404(Article, pk=id)
-    return render(request, 'detail.html', {'article': article})
+    profile, created = Profile.objects.get_or_create(user=request.user)
+    return render(request, 'detail.html', {'article': article, "profile": profile})
 
 
 def edit(request, id):

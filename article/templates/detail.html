@@ -2,7 +2,11 @@
 {{article.id}}
 <br>
 <h1>{{article.title}}</h1>
+{% if profile.image %}
+  <img src="{{profile.image.url}}" alt="프로필사진" width="100">
+{% endif %}
 <p>{{article.author.username}}</p>
+
 <hr>
 <p>{{article.content}}</p>
 
